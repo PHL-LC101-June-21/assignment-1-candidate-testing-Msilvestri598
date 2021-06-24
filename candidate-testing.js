@@ -24,20 +24,17 @@ console.log("Hello " + candidateName + ", welcome!")
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   const input = require('readline-sync');
+  let candidateAnswer = input.question[0]
+ 
+  for (let i = 0; i < questions.length; i++) {
+  console.log(questions[i]);
+ 
+ 
 
-  let candidateAnswer = input.question(question)
-  
-
- if (candidateAnswer.toUpperCase() == correctAnswer.toUpperCase()) { 
-   console.log("Great job!")  
- } else {
-   console.log("WRONG!")
- }
 }
 
 
-for (let i = 0; i < questions.length; i++) {
-  console.log(questions[i]);
+
 }
 
 
