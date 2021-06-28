@@ -16,31 +16,31 @@ let score = 0
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-const input = require('readline-sync');
+  const input = require('readline-sync');
 
-let candidateName = input.question("What is your name? ");
-console.log("Hello " + candidateName + ", welcome!")
+  let candidateName = input.question("What is your name? ");
+  console.log("Hello " + candidateName + ", welcome!")
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
- 
+
   for (let i = 0; i < questions.length; i++) {
 
 
-  candidateAnswers = input.question(questions[i])
+    candidateAnswers = input.question(questions[i])
 
-  if (candidateAnswers.toUpperCase() === correctAnswers[i].toUpperCase()) {
-    console.log(`Yay! 
+    if (candidateAnswers.toUpperCase() === correctAnswers[i].toUpperCase()) {
+      console.log(`Yay! 
 Your Answer: ${candidateAnswers} 
 Correct Answer: ${correctAnswers[i]} `)
-    score++;
-   } else {
-     console.log(`TERRIBLE! 
+      score++;
+    } else {
+      console.log(`TERRIBLE! 
 Your Answer:${candidateAnswers} 
-Correct Answer: ${correctAnswers[i]}`) 
-   }
+Correct Answer: ${correctAnswers[i]}`)
+    }
   }
 
 }
@@ -50,22 +50,22 @@ Correct Answer: ${correctAnswers[i]}`)
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
- console.log(``)
- let grade = console.log("You got " + score + " out of " + questions.length + " correct.")
- 
- let percentage = (score * 100)/5
- console.log("You received " + percentage + "% on this test")
+  console.log(``)
+  let grade = console.log("You got " + score + " out of " + questions.length + " correct.")
 
- if (percentage >= 80) {
- console.log("TEST PASSED") 
- }
-   else {
-     console.log("TEST FAILED")
- }
+  let percentage = (score * 100) / 5
+  console.log("You received " + percentage + "% on this test")
 
-  
-  
-  
+  if (percentage >= 80) {
+    console.log("TEST PASSED")
+  }
+  else {
+    console.log("TEST FAILED")
+  }
+
+
+
+
 
   return grade;
 }
@@ -73,7 +73,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  
+
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
